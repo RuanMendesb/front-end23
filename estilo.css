@@ -1,0 +1,140 @@
+/* RESET BÁSICO */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* --------------------------------- */
+/* ANIMAÇÕES GERAIS (KEYFRAMES)      */
+/* --------------------------------- */
+
+/* 1. Animação de entrada (desliza de baixo para cima) */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 2. Animação de pulsação suave (para dar vida ao cabeçalho) */
+@keyframes softPulse {
+    0% {
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    50% {
+        box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3);
+    }
+    100% {
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+}
+
+
+/* --------------------------------- */
+/* ESTILOS DE LAYOUT                 */
+/* --------------------------------- */
+
+/* CORPO DA PÁGINA */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #ecf0f1; /* Fundo mais claro, para contraste */
+    color: #2c3e50;
+    line-height: 1.6;
+}
+
+/* CABEÇALHO (HEADER) */
+header {
+    background-color: #2980b9; /* Azul escuro */
+    color: white;
+    padding: 30px;
+    text-align: center;
+    
+    /* APLICANDO A ANIMAÇÃO DE PULSAÇÃO */
+    animation: softPulse 3s infinite ease-in-out; 
+}
+
+header h1 {
+    font-size: 2.5em;
+    margin-bottom: 5px;
+}
+
+/* CONTEÚDO PRINCIPAL (MAIN) */
+main {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+
+    /* APLICANDO A ANIMAÇÃO DE ENTRADA */
+    animation: slideIn 0.8s ease-out forwards; 
+}
+
+/* TÍTULOS */
+h2 {
+    color: #3498db; /* Azul vibrante */
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 10px;
+    margin-top: 25px;
+    margin-bottom: 15px;
+}
+
+h3 {
+    color: #34495e;
+    margin-top: 20px;
+}
+
+/* LISTA */
+.lista-itens ul {
+    list-style-type: square;
+    padding-left: 20px;
+}
+
+/* --------------------------------- */
+/* CENTRALIZAÇÃO DO BOTÃO (NOVIDADE) */
+/* --------------------------------- */
+.interacao-centralizada {
+    display: flex;             /* Habilita o Flexbox */
+    flex-direction: column;    /* Coloca os itens (parágrafo e botão) em coluna */
+    align-items: center;       /* Centraliza os itens horizontalmente */
+    text-align: center;        /* Centraliza o texto do parágrafo */
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+
+/* ESTILO E ANIMAÇÃO DO BOTÃO */
+#meuBotao {
+    background-color: #e74c3c; /* Vermelho */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    
+    /* ANIMAÇÃO DE TRANSIÇÃO (HOVER) */
+    transition: all 0.3s ease; /* Transição suave em todas as propriedades */
+    transform: scale(1);       /* Define o estado inicial */
+}
+
+#meuBotao:hover {
+    background-color: #c0392b; /* Cor mais escura ao passar o mouse */
+    transform: scale(1.05); /* Faz o botão crescer levemente ao passar o mouse */
+}
+
+/* RODAPÉ */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #34495e;
+    color: #ecf0f1;
+    margin-top: 50px;
+}

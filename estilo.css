@@ -9,7 +9,7 @@
 /* ANIMAÇÕES GERAIS (KEYFRAMES)      */
 /* --------------------------------- */
 
-/* 1. Animação de entrada (desliza de baixo para cima) */
+/* 1. Animação de entrada (mais sombria) */
 @keyframes slideIn {
     from {
         opacity: 0;
@@ -21,120 +21,149 @@
     }
 }
 
-/* 2. Animação de pulsação suave (para dar vida ao cabeçalho) */
-@keyframes softPulse {
+/* 2. Pulsação do Símbolo da Ordem (mais intensa) */
+@keyframes intensePulse {
     0% {
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 0 5px #ff0000, 0 0 5px #5c0000;
     }
     50% {
-        box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3);
+        box-shadow: 0 0 15px #ff0000, 0 0 20px #5c0000; /* Pulsa vermelho (Sangue/Medo) */
     }
     100% {
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 0 5px #ff0000, 0 0 5px #5c0000;
     }
 }
 
 
 /* --------------------------------- */
-/* ESTILOS DE LAYOUT                 */
+/* ESTILOS DE LAYOUT (ORNDEM)        */
 /* --------------------------------- */
 
-/* CORPO DA PÁGINA */
+/* CORPO DA PÁGINA: Fundo Escuro, Investigativo */
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #ecf0f1; /* Fundo mais claro, para contraste */
-    color: #2c3e50;
+    font-family: Georgia, 'Times New Roman', Times, serif; /* Fonte mais séria/antiga */
+    background-color: #0d0d0d; /* Preto quase absoluto */
+    color: #e0e0e0; /* Cinza claro para o texto */
     line-height: 1.6;
 }
 
-/* CABEÇALHO (HEADER) */
+/* CABEÇALHO (HEADER): Símbolo do Ocultismo */
 header {
-    background-color: #2980b9; /* Azul escuro */
-    color: white;
+    background-color: #1a1a1a; /* Preto mais suave */
+    color: #e74c3c; /* Vermelho do Sangue para o destaque */
     padding: 30px;
     text-align: center;
+    border-bottom: 3px solid #ff0000; /* Linha de Sangue */
     
     /* APLICANDO A ANIMAÇÃO DE PULSAÇÃO */
-    animation: softPulse 3s infinite ease-in-out; 
+    animation: intensePulse 4s infinite ease-in-out; 
 }
 
 header h1 {
-    font-size: 2.5em;
-    margin-bottom: 5px;
+    font-size: 2.8em;
+    font-weight: bold;
+    letter-spacing: 2px; /* Espaçamento para ar misterioso */
+    text-shadow: 0 0 5px #ff0000;
 }
 
-/* CONTEÚDO PRINCIPAL (MAIN) */
+/* CONTEÚDO PRINCIPAL (MAIN): Documento/Ficha de Investigação */
 main {
     max-width: 900px;
     margin: 40px auto;
-    padding: 30px;
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+    padding: 40px;
+    background-color: #1f1f1f; /* Cor do papel/fundo de ficha */
+    border-radius: 4px;
+    border: 1px solid #333;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); /* Sombra pesada */
 
     /* APLICANDO A ANIMAÇÃO DE ENTRADA */
-    animation: slideIn 0.8s ease-out forwards; 
+    animation: slideIn 1.2s ease-out forwards; 
 }
 
-/* TÍTULOS */
+/* TÍTULOS: Cor dos Elementos */
 h2 {
-    color: #3498db; /* Azul vibrante */
-    border-bottom: 2px solid #3498db;
+    color: #8e44ad; /* Roxo da Energia */
+    border-bottom: 2px dashed #4e4e4e; /* Linha tracejada (documento) */
     padding-bottom: 10px;
     margin-top: 25px;
     margin-bottom: 15px;
 }
 
 h3 {
-    color: #34495e;
+    color: #e67e22; /* Laranja/Amarelo do Conhecimento */
     margin-top: 20px;
+    font-style: italic;
 }
 
 /* LISTA */
 .lista-itens ul {
-    list-style-type: square;
-    padding-left: 20px;
+    list-style-type: none; /* Remove bolinhas */
+    padding-left: 0;
+}
+.lista-itens li {
+    padding: 5px 0;
+    border-left: 3px solid #4e4e4e;
+    padding-left: 10px;
+    margin-bottom: 5px;
+    transition: background-color 0.2s;
+}
+
+.lista-itens li:hover {
+    background-color: #2c2c2c;
+    border-left-color: #e74c3c; /* Destaque com cor de Sangue */
 }
 
 /* --------------------------------- */
-/* CENTRALIZAÇÃO DO BOTÃO (NOVIDADE) */
+/* ESTILO E ANIMAÇÃO DO BOTÃO        */
 /* --------------------------------- */
 .interacao-centralizada {
-    display: flex;             /* Habilita o Flexbox */
-    flex-direction: column;    /* Coloca os itens (parágrafo e botão) em coluna */
-    align-items: center;       /* Centraliza os itens horizontalmente */
-    text-align: center;        /* Centraliza o texto do parágrafo */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
     margin-top: 30px;
     margin-bottom: 30px;
+    border-top: 1px solid #4e4e4e;
+    padding-top: 20px;
 }
 
-
-/* ESTILO E ANIMAÇÃO DO BOTÃO */
+/* BOTÃO DE INTERATIVIDADE: Cor do Medo/Alerta */
 #meuBotao {
-    background-color: #e74c3c; /* Vermelho */
-    color: white;
-    border: none;
+    background-color: #34495e; /* Cinza Chumbo/Morte */
+    color: #e0e0e0;
+    border: 1px solid #666;
     padding: 10px 20px;
     margin-top: 15px;
-    border-radius: 5px;
+    border-radius: 2px;
     cursor: pointer;
     font-weight: bold;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
     
     /* ANIMAÇÃO DE TRANSIÇÃO (HOVER) */
-    transition: all 0.3s ease; /* Transição suave em todas as propriedades */
-    transform: scale(1);       /* Define o estado inicial */
+    transition: all 0.3s ease; 
+    transform: scale(1);
 }
 
 #meuBotao:hover {
-    background-color: #c0392b; /* Cor mais escura ao passar o mouse */
-    transform: scale(1.05); /* Faz o botão crescer levemente ao passar o mouse */
+    background-color: #c0392b; /* Destaque Sangue */
+    border-color: #ff0000;
+    transform: scale(1.05) rotateZ(1deg); /* Leve vibração */
+    box-shadow: 0 0 10px #ff0000;
+}
+
+/* ESTILO DA MENSAGEM DE INTERAÇÃO */
+#mensagem-do-dia {
+    color: #c0392b; /* Texto de alerta/perigo */
+    font-size: 1.1em;
+    font-style: italic;
 }
 
 /* RODAPÉ */
 footer {
     text-align: center;
     padding: 20px;
-    background-color: #34495e;
-    color: #ecf0f1;
+    background-color: #0a0a0a;
+    color: #8e44ad;
     margin-top: 50px;
+    border-top: 1px solid #222;
 }
